@@ -1,4 +1,5 @@
 <template>
+  <background-app></background-app>
   <div class="app">
   <the-header></the-header>
   <router-view v-slot="slotProps">
@@ -11,9 +12,11 @@
 
 <script>
 import TheHeader from './components/layout/TheHeader.vue';
+import BackgroundApp from './components/layout/BackgroundApp.vue';
 export default {
   components: {
     TheHeader,
+    BackgroundApp,
   },
   computed: {
     didAutoLogout() {
@@ -49,6 +52,22 @@ body {
   margin: 0;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  /* background-color: #ffffff; */
+  margin: 0 ;
+  padding: 0;
+}
+
+.app {
+  position: relative;
+  /* background-color: #ffffff; */
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .route-enter-from {
   opacity: 0;
   transform: translateY(-30px);
@@ -73,3 +92,5 @@ body {
   transform: translateY(0);
 }
 </style>
+
+

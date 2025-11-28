@@ -24,7 +24,7 @@
             mode="controls-btn"
             ><FontAwesomeIcon icon="user-plus" /> as Coach</base-button
           >
-          <div class="edit-wrapper" v-if="isAuthenticated ">
+          <div class="edit-wrapper" v-if="isAuthenticated">
             <base-button
               @click="handleEdit"
               mode="outline controls-btn"
@@ -34,7 +34,7 @@
           </div>
           <div v-if="displayEdit" @click="handleEdit" class="backdrop"></div>
           <transition name="option" mode="out-in">
-            <div class="option-btn" v-if="displayEdit && isAuthenticated ">
+            <div class="option-btn" v-if="displayEdit && isAuthenticated">
               <base-button
                 v-if="isAuthenticated && isCoach"
                 link
@@ -49,11 +49,12 @@
                 ><FontAwesomeIcon icon="trash" /> Coach</base-button
               >
               <base-button
-            v-if="isAuthenticated && !isCoach && !isLoading"
-            link
-            to="/register"
-            mode="dropdown-link"
-            ><FontAwesomeIcon icon="user-plus" /> as Coach</base-button>
+                v-if="isAuthenticated && !isCoach && !isLoading"
+                link
+                to="/register"
+                mode="dropdown-link"
+                ><FontAwesomeIcon icon="user-plus" /> as Coach</base-button
+              >
             </div>
           </transition>
         </div>
@@ -197,33 +198,34 @@ ul {
   position: relative;
   display: flex;
   justify-content: space-between;
+  background-color: #ffffff;
 }
 
-  .edit-wrapper {
-    display: block;
-  }
+.edit-wrapper {
+  display: block;
+}
 
-  .edit-btn {
-    width: 100%;
-  }
+.edit-btn {
+  width: 100%;
+}
 
-  .option-btn {
-    width: 35%;
-    position: absolute;
-    top: 3.4rem;
-    right: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    background-color: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0);
-    border-radius: 0.5rem;
-    padding: 0.3rem;
-    background: #fff;
-    z-index: 2;
-  }
+.option-btn {
+  width: 35%;
+  position: absolute;
+  top: 3.4rem;
+  right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0);
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  background: #fff;
+  z-index: 2;
+}
 
-  .backdrop {
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -232,25 +234,25 @@ ul {
   z-index: 1;
 }
 
-  .option-enter-from,
-  .option-leave-to {
-    opacity: 0;
-    transform: translateX(6px);
-  }
+.option-enter-from,
+.option-leave-to {
+  opacity: 0;
+  transform: translateX(6px);
+}
 
-  .option-enter-active {
-    transition: all 0.5s ease-out;
-  }
+.option-enter-active {
+  transition: all 0.5s ease-out;
+}
 
-  .option-leave-active {
-    transition: all 0.5s ease-in;
-  }
+.option-leave-active {
+  transition: all 0.5s ease-in;
+}
 
-  .option-enter-to,
-  .option-leave-from {
-    opacity: 1;
-    transform: translatex(0px);
-  }
+.option-enter-to,
+.option-leave-from {
+  opacity: 1;
+  transform: translatex(0px);
+}
 
 /* ----------------------------------------- */
 /* MOBILE SCREEN */
@@ -265,6 +267,5 @@ ul {
 /* TABLET SCREEN */
 /* ----------------------------------------- */
 @media (max-width: 640px) {
-
 }
 </style>
