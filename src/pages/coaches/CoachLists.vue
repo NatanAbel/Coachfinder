@@ -61,7 +61,7 @@
         <div v-if="isLoading">
           <base-spinner></base-spinner>
         </div>
-        <ul v-else-if="hasCoaches">
+        <ul v-else-if="hasCoaches && filteredCoaches.length > 0">
           <coach-item
             v-for="coach in filteredCoaches"
             :key="coach.id"
@@ -73,7 +73,8 @@
           >
           </coach-item>
         </ul>
-        <h3 v-else>No coaches found.</h3>
+        <h3 v-else-if="hasCoaches && filteredCoaches.length === 0" class="no-coaches-found">No coaches found based on your filters!</h3>
+        <h3 v-else class="no-coaches-found">No coaches found!</h3>
       </base-card>
     </section>
   </div>
@@ -252,6 +253,14 @@ ul {
 .option-leave-from {
   opacity: 1;
   transform: translatex(0px);
+}
+
+.no-coaches-found {
+  text-align: center;
+  font-weight: 600;
+  color: #444;
+  margin: 2rem 0;
+  font-size: clamp(1.25rem, 4vw, 1.6rem);
 }
 
 /* ----------------------------------------- */
